@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Haytham W. Hijazi, Ph.D. — Academic CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  /* ── DESIGN TOKENS ──────────────────────────────────────── */
+  :root {
+    --navy:       #0f2044;
+    --navy-mid:   #1b3a6b;
+    --blue:       #2563eb;
+    --blue-light: #3b82f6;
+    --accent:     #0ea5e9;
+    --gold:       #d4a843;
+    --ink:        #1a1a2e;
+    --body:       #2d3748;
+    --muted:      #64748b;
+    --faint:      #94a3b8;
+    --bg:         #f8faff;
+    --card:       #ffffff;
+    --border:     #e2e8f0;
+    --sidebar-w:  260px;
+  }
+
+  /* ── RESET ──────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--body);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── LAYOUT ─────────────────────────────────────────────── */
+  .layout {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ── SIDEBAR ────────────────────────────────────────────── */
+  .sidebar {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    background: var(--navy);
+    color: #cbd5e1;
+    padding: 48px 28px 48px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-thumb { background: #2d4a7a; border-radius: 4px; }
+
+  .avatar-wrap {
+    width: 96px; height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700;
+    color: white;
+    box-shadow: 0 0 0 4px #1e3a6e, 0 0 0 8px rgba(37,99,235,0.3);
+  }
+
+  .sidebar h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700;
+    color: white; text-align: center;
+    line-height: 1.3; margin-bottom: 4px;
+  }
+  .sidebar .tagline {
+    font-size: 11px; color: var(--accent);
+    text-align: center; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 28px;
+    font-weight: 500;
+  }
+
+  .sidebar-divider {
+    height: 1px; background: #1e3a6e; margin: 20px 0;
+  }
+
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    margin-bottom: 10px; font-size: 12px; color: #94a3b8;
+  }
+  .contact-item .icon {
+    width: 18px; flex-shrink: 0; margin-top: 1px;
+    color: var(--accent); font-size: 13px;
+  }
+  .contact-item a { color: #93c5fd; font-size: 12px; }
+  .contact-item a:hover { color: white; }
+
+  .sidebar-nav { margin-top: 28px; }
+  .sidebar-nav h3 {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--faint); margin-bottom: 10px; font-weight: 600;
+  }
+  .sidebar-nav a {
+    display: block; padding: 7px 12px; border-radius: 6px;
+    font-size: 12.5px; color: #94a3b8;
+    transition: all 0.2s; margin-bottom: 2px;
+    border-left: 2px solid transparent;
+  }
+  .sidebar-nav a:hover, .sidebar-nav a.active {
+    background: rgba(37,99,235,0.15);
+    color: white; border-left-color: var(--accent);
+    text-decoration: none;
+  }
+
+  .sidebar-badge {
+    display: inline-block;
+    background: rgba(14,165,233,0.15); color: var(--accent);
+    border: 1px solid rgba(14,165,233,0.3);
+    border-radius: 100px; padding: 2px 8px;
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.06em; margin-left: 4px; vertical-align: middle;
+  }
+
+  /* ── MAIN CONTENT ───────────────────────────────────────── */
+  .main {
+    flex: 1;
+    padding: 52px 56px 80px;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ───────────────────────────────────────────────── */
+  .hero {
+    margin-bottom: 52px;
+    padding-bottom: 36px;
+    border-bottom: 2px solid var(--border);
+    position: relative;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -2px; left: 0;
+    width: 80px; height: 2px; background: var(--blue);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px; font-weight: 700;
+    color: var(--navy); line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .hero h1 sup {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--blue); vertical-align: super;
+  }
+  .hero-sub {
+    font-size: 14px; color: var(--muted);
+    font-weight: 400; letter-spacing: 0.02em;
+    margin-bottom: 20px;
+  }
+  .hero-sub span { color: var(--blue); font-weight: 500; }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border: 1px solid #bfdbfe;
+    color: var(--navy-mid); border-radius: 100px;
+    padding: 4px 14px; font-size: 12px; font-weight: 500;
+  }
+
+  /* ── SECTION ────────────────────────────────────────────── */
+  .section { margin-bottom: 52px; scroll-margin-top: 24px; }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--navy); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-title::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(to right, var(--border), transparent);
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; color: var(--blue);
+    background: #eff6ff; border: 1px solid #bfdbfe;
+    border-radius: 4px; padding: 1px 7px;
+    font-weight: 500;
+  }
+
+  /* ── PROFILE CARD ───────────────────────────────────────── */
+  .profile-card {
+    background: linear-gradient(135deg, #f0f7ff 0%, #fafbff 100%);
+    border: 1px solid #bfdbfe; border-radius: 14px;
+    padding: 28px 32px; position: relative; overflow: hidden;
+  }
+  .profile-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(to bottom, var(--blue), var(--accent));
+    border-radius: 4px 0 0 4px;
+  }
+  .profile-card p { color: var(--body); font-size: 14.5px; margin-bottom: 12px; line-height: 1.8; }
+  .profile-card p:last-child { margin-bottom: 0; }
+
+  /* ── EXPERIENCE ITEM ────────────────────────────────────── */
+  .exp-item {
+    padding: 22px 26px; border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    margin-bottom: 16px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .exp-item:hover {
+    box-shadow: 0 4px 24px rgba(37,99,235,0.08);
+    border-color: #bfdbfe;
+  }
+  .exp-header {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 16px;
+    margin-bottom: 6px; flex-wrap: wrap;
+  }
+  .exp-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 700;
+    color: var(--navy); line-height: 1.3;
+  }
+  .exp-org { font-size: 13px; color: var(--blue); font-weight: 500; margin-bottom: 12px; }
+  .exp-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px; color: var(--muted);
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 6px; padding: 3px 10px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .exp-badge {
+    position: absolute; top: -1px; right: 20px;
+    background: var(--blue); color: white;
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.06em; padding: 2px 10px;
+    border-radius: 0 0 8px 8px;
+  }
+  .exp-badge.green { background: #059669; }
+  .exp-badge.gold  { background: var(--gold); color: var(--navy); }
+
+  /* ── BULLET LIST ────────────────────────────────────────── */
+  .bullet-list { list-style: none; padding: 0; }
+  .bullet-list li {
+    padding: 3px 0 3px 18px; position: relative;
+    font-size: 13.5px; color: var(--body); line-height: 1.65;
+  }
+  .bullet-list li::before {
+    content: '▸'; position: absolute; left: 0;
+    color: var(--blue); font-size: 11px; top: 5px;
+  }
+  .bullet-list li b { color: var(--navy); }
+
+  /* ── FUNDING CARD ───────────────────────────────────────── */
+  .funding-card {
+    background: linear-gradient(135deg, #0f2044 0%, #1b3a6b 100%);
+    border-radius: 14px; padding: 28px 32px; color: white;
+    margin-bottom: 20px; position: relative; overflow: hidden;
+  }
+  .funding-card::after {
+    content: '€20K'; position: absolute; right: 24px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 56px; font-weight: 700;
+    color: rgba(255,255,255,0.06); line-height: 1;
+    pointer-events: none;
+  }
+  .funding-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; color: white; margin-bottom: 4px;
+  }
+  .funding-card .funder { font-size: 12.5px; color: #93c5fd; margin-bottom: 16px; }
+  .funding-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 14px; }
+  .funding-meta-item { font-size: 12px; color: #cbd5e1; }
+  .funding-meta-item span { color: var(--accent); font-weight: 600; }
+  .funding-card ul { list-style: none; }
+  .funding-card ul li {
+    font-size: 13px; color: #cbd5e1;
+    padding: 2px 0 2px 16px; position: relative;
+  }
+  .funding-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+  /* ── PATENT CARD ────────────────────────────────────────── */
+  .patent-card {
+    background: #fffbeb; border: 1px solid #fde68a;
+    border-radius: 12px; padding: 22px 26px;
+  }
+  .patent-card h3 { font-size: 15px; color: var(--ink); font-weight: 700; margin-bottom: 4px; }
+  .patent-card .ref { font-family: 'DM Mono', monospace; font-size: 12px; color: #92400e; margin-bottom: 10px; }
+  .patent-card p { font-size: 13.5px; color: var(--body); }
+
+  /* ── EDUCATION ──────────────────────────────────────────── */
+  .edu-item {
+    display: flex; gap: 20px; padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .edu-item:last-child { border-bottom: none; }
+  .edu-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px; color: var(--muted);
+    min-width: 70px; padding-top: 3px;
+  }
+  .edu-body {}
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 15.5px; font-weight: 700; color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .edu-inst { font-size: 13px; color: var(--blue); font-weight: 500; margin-bottom: 6px; }
+  .edu-dist {
+    display: inline-block;
+    background: #fef3c7; border: 1px solid #fbbf24;
+    color: #92400e; border-radius: 6px;
+    font-size: 11px; font-weight: 600;
+    padding: 2px 9px; margin-bottom: 8px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+
+  /* ── TEACHING ───────────────────────────────────────────── */
+  .course-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .course-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 18px;
+    transition: border-color 0.2s;
+  }
+  .course-card:hover { border-color: #93c5fd; }
+  .course-card .level {
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--blue); margin-bottom: 4px;
+  }
+  .course-card .name { font-size: 14px; font-weight: 600; color: var(--navy); }
+  .course-card .prog { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* ── SUPERVISION ────────────────────────────────────────── */
+  .supervision-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 24px; margin-bottom: 14px;
+    position: relative;
+  }
+  .supervision-item .status {
+    position: absolute; top: 16px; right: 16px;
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; padding: 3px 10px; border-radius: 100px;
+  }
+  .status-active { background: #d1fae5; color: #065f46; }
+  .status-completed { background: #e0e7ff; color: #3730a3; }
+  .supervision-item .student-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 2px;
+  }
+  .supervision-item .student-meta {
+    font-size: 12px; color: var(--muted); margin-bottom: 10px;
+  }
+  .supervision-item .thesis-title {
+    font-size: 13px; color: var(--body); font-style: italic;
+    border-left: 3px solid var(--blue); padding-left: 12px;
+    margin-bottom: 8px; line-height: 1.5;
+  }
+  .grade-badge {
+    display: inline-block;
+    background: var(--gold); color: var(--navy);
+    font-weight: 700; font-size: 12px;
+    border-radius: 6px; padding: 2px 10px;
+    margin-left: 8px;
+  }
+
+  /* ── SKILLS ─────────────────────────────────────────────── */
+  .skills-group { margin-bottom: 24px; }
+  .skills-group h4 {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--navy-mid); margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .skills-group h4::after { content: ''; flex:1; height:1px; background: var(--border); }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tag {
+    background: #f1f5f9; border: 1px solid var(--border);
+    color: var(--body); border-radius: 7px;
+    padding: 4px 12px; font-size: 12.5px; font-weight: 500;
+    transition: all 0.15s;
+  }
+  .tag:hover { background: #dbeafe; border-color: #93c5fd; color: var(--navy-mid); }
+  .tag.highlight {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border-color: #93c5fd; color: var(--navy-mid); font-weight: 600;
+  }
+
+  /* ── PUBLICATIONS ───────────────────────────────────────── */
+  .pub-item {
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+    display: flex; gap: 16px;
+  }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; color: var(--faint);
+    min-width: 24px; padding-top: 2px;
+  }
+  .pub-body { flex: 1; }
+  .pub-title { font-size: 13.5px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+  .pub-meta { font-size: 12px; color: var(--muted); }
+  .pub-venue {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    color: var(--blue); background: #eff6ff; border-radius: 4px;
+    padding: 1px 7px; margin-left: 6px;
+    border: 1px solid #bfdbfe;
+  }
+
+  /* ── AWARDS ─────────────────────────────────────────────── */
+  .award-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 12px 0; border-bottom: 1px dashed var(--border);
+  }
+  .award-item:last-child { border-bottom: none; }
+  .award-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px; color: var(--blue); font-weight: 600;
+    min-width: 40px;
+  }
+  .award-text { font-size: 13.5px; color: var(--body); }
+
+  /* ── SERVICE ────────────────────────────────────────────── */
+  .service-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;
+  }
+  .service-item h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+  .service-item p { font-size: 13px; color: var(--muted); }
+
+  /* ── PROJECTS ───────────────────────────────────────────── */
+  .project-card {
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 14px;
+    background: var(--card);
+    border-left: 4px solid var(--blue);
+  }
+  .project-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+  .project-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+
+  /* ── REFERENCES ─────────────────────────────────────────── */
+  .ref-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 22px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .ref-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 700; font-size: 14px; flex-shrink: 0;
+  }
+  .ref-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+  .ref-card p { font-size: 12.5px; color: var(--muted); }
+  .ref-card a { font-size: 12.5px; }
+
+  /* ── FOOTER ─────────────────────────────────────────────── */
+  .footer {
+    text-align: center; padding: 32px 0 0;
+    border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--faint);
+  }
+
+  /* ── PRINT ──────────────────────────────────────────────── */
+  @media print {
+    .sidebar { display: none; }
+    .main { padding: 20px; }
+    .exp-item { break-inside: avoid; }
+  }
+
+  /* ── RESPONSIVE ─────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .layout { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; position: static; padding: 32px 24px; }
+    .main { padding: 32px 24px; }
+    .course-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── SCROLL FADE IN ─────────────────────────────────────── */
+  .fade-in {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── SIDEBAR ─────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="avatar-wrap">HH</div>
+    <h1>Haytham W. Hijazi</h1>
+    <div class="tagline">Ph.D. · AI Researcher · Dean</div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="contact-item">
+      <span class="icon">✉</span>
+      <span><a href="mailto:haitham@paluniv.edu.ps">haitham@paluniv.edu.ps</a><br>
+      <a href="mailto:haytham@dei.uc.pt">haytham@dei.uc.pt</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="icon">📍</span>
+      <span>Bethlehem, Palestine</span>
+    </div>
+    <div class="contact-item">
+      <span class="icon">📞</span>
+      <span>+972 599 829 221</span>
+    </div>
+    <div class="contact-item">
+      <span class="icon">🔗</span>
+      <span><a href="https://www.linkedin.com/in/haythamhijazi/" target="_blank">LinkedIn</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="icon">📚</span>
+      <span><a href="https://scholar.google.com/citations?user=TttmiGUAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="icon">🆔</span>
+      <span>ORCID: <a href="https://orcid.org/0000-0002-4981-3649" target="_blank">0000-0002-4981-3649</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="icon">🇵🇹</span>
+      <span>Ciência ID: 6619-05C7-6EC6</span>
+    </div>
+
+    <div class="sidebar-divider"></div>
+    <nav class="sidebar-nav">
+      <h3>Sections</h3>
+      <a href="#profile">Profile</a>
+      <a href="#positions">Positions</a>
+      <a href="#funding">Research & Funding</a>
+      <a href="#education">Education</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#supervision">Supervision</a>
+      <a href="#skills">Technical Skills</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#awards">Awards</a>
+      <a href="#service">Service</a>
+      <a href="#references">References</a>
+    </nav>
+  </aside>
+
+  <!-- ── MAIN ────────────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero fade-in">
+      <h1>Haytham W. Hijazi<sup>Ph.D.</sup></h1>
+      <p class="hero-sub">
+        <span>Dean</span>, Faculty of Engineering & IT &nbsp;·&nbsp;
+        <span>Director</span>, AI & Innovation Center &nbsp;·&nbsp;
+        <span>Integrated Researcher</span>, CISUC, University of Coimbra
+      </p>
+      <div class="hero-pills">
+        <span class="pill">Applied AI</span>
+        <span class="pill">LLM Systems & Agentic AI</span>
+        <span class="pill">Biofeedback Engineering</span>
+        <span class="pill">Intelligent Systems</span>
+        <span class="pill">Neurophysiological Computing</span>
+        <span class="pill">MLOps</span>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+    <section id="profile" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">01</span> Executive Profile</h2>
+      <div class="profile-card">
+        <p>
+          An enthusiastic AI researcher and academic leader with a Ph.D. in Informatics Engineering
+          (Intelligent Systems) from the University of Coimbra, awarded <strong>summa cum laude</strong>
+          (highest distinction). Currently serving as <strong>Dean of the Faculty of Engineering &
+          Information Technology</strong> and <strong>Director of the AI & Innovation Center</strong>
+          at Palestine Ahliya University, while maintaining an active research affiliation as
+          <strong>Integrated Researcher at CISUC</strong> (Centre for Informatics and Systems,
+          University of Coimbra).
+        </p>
+        <p>
+          Specializes in applied AI for content comprehension, biofeedback-augmented software
+          engineering, large language model (LLM) systems, and agentic AI. Secured <strong>€20,000</strong>
+          in international research funding (February 2026) for the <strong>BRAIN project</strong>.
+          Holds an international patent pending for an AI-driven biofeedback code review tool and
+          has published in leading <strong>IEEE</strong> and <strong>Nature</strong> journals. Since
+          2023, serves annually as a Member of the <strong>DSN Doctoral Forum Committee</strong>
+          (IEEE/IFIP International Conference on Dependable Systems and Networks) and as a peer
+          reviewer for international journals and conferences. Combines deep technical expertise
+          in modern LLM deployment, MLOps, and agentic workflows with a strong record in academic
+          leadership, curriculum innovation, and interdisciplinary collaboration across Europe,
+          the Middle East, and beyond.
+        </p>
+      </div>
+    </section>
+
+    <!-- POSITIONS -->
+    <section id="positions" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">02</span> Academic & Leadership Positions</h2>
+
+      <div class="exp-item">
+        <span class="exp-badge">Current</span>
+        <div class="exp-header">
+          <div class="exp-title">Dean, Faculty of Engineering & Information Technology</div>
+          <span class="exp-period">2025 – Present</span>
+        </div>
+        <div class="exp-org">Palestine Ahliya University · Bethlehem, Palestine</div>
+        <ul class="bullet-list">
+          <li>Lead strategic transformation of academic programs, integrating AI, Machine Learning, and Intelligent Systems across undergraduate and graduate curricula.</li>
+          <li>Drive research excellence and secure funding for interdisciplinary projects spanning AI, biofeedback, and intelligent systems.</li>
+          <li>Foster academia–industry partnerships advancing technology transfer and entrepreneurship within the faculty.</li>
+          <li>Oversee faculty evaluation, accreditation processes, and capacity-building initiatives aligned with global academic standards.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <span class="exp-badge">Current</span>
+        <div class="exp-header">
+          <div class="exp-title">Director, AI & Innovation Center</div>
+          <span class="exp-period">2026 – Present</span>
+        </div>
+        <div class="exp-org">Palestine Ahliya University · Bethlehem, Palestine</div>
+        <ul class="bullet-list">
+          <li>Establish and lead the university's dedicated AI & Innovation Center, defining its research agenda, infrastructure, and collaborative partnerships.</li>
+          <li>Design and deliver advanced AI programs including the MSc in AI & Data Analytics, incorporating LLM systems and agentic engineering.</li>
+          <li>Champion applied AI initiatives connecting faculty research with real-world industry challenges.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <span class="exp-badge">Current</span>
+        <div class="exp-header">
+          <div class="exp-title">Integrated Researcher</div>
+          <span class="exp-period">2019 – Present</span>
+        </div>
+        <div class="exp-org">CISUC – Centre for Informatics and Systems · University of Coimbra, Portugal</div>
+        <ul class="bullet-list">
+          <li>Lead funded research at the intersection of AI, physiological computing, and software engineering.</li>
+          <li>Principal Investigator for the BRAIN project — funded €20,000 by CISUC (February 2026).</li>
+          <li>Supervise doctoral and master's researchers in LLM-augmented code comprehension and neurophysiological signal processing.</li>
+          <li>Collaborate with researchers at ETH Zurich, University of Stuttgart, and University of Sharjah on cross-disciplinary AI projects.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">AI Trainer & Workshop Lead</div>
+          <span class="exp-period">2023 – Present</span>
+        </div>
+        <div class="exp-org">Palestine & International Venues</div>
+        <ul class="bullet-list">
+          <li>Design and deliver high-impact AI training programs on LLM deployment, agentic AI, and applied data science.</li>
+          <li><b>May 2025:</b> Deploy AI Transformer Apps with Streamlit, Flask, Hugging Face & Docker</li>
+          <li><b>March 2025:</b> AI Research & Development Trends</li>
+          <li><b>January 2025:</b> AI in Research: Power, Ethics, and Innovation</li>
+          <li><b>November 2024:</b> Innovate with AI Tools: Turning Ideas into a Startup</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Quality Assurance Manager</div>
+          <span class="exp-period">2017 – 2019</span>
+        </div>
+        <div class="exp-org">Palestine Ahliya University</div>
+        <ul class="bullet-list">
+          <li>Led QA frameworks for academic and administrative departments; drove curriculum development, faculty evaluation, and program accreditation.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Faculty Member & Computer Centre Director</div>
+          <span class="exp-period">2013 – 2019</span>
+        </div>
+        <div class="exp-org">Palestine Ahliya University</div>
+        <ul class="bullet-list">
+          <li>Managed university IT operations (4-person team), covering software development, networks, and capacity-building.</li>
+          <li>Taught Android Development, Image Processing, Communication Skills; supervised BSc and entrepreneurial projects.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Research Assistant</div>
+          <span class="exp-period">2020 – 2022</span>
+        </div>
+        <div class="exp-org">University of Sharjah · UAE</div>
+        <ul class="bullet-list">
+          <li>Developed AI models for early COVID-19 detection using non-invasive biofeedback wearables; applied anomaly detection, explainable ML, and deep learning on physiological time-series data.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Research Assistant</div>
+          <span class="exp-period">Aug 2012 – Jan 2013</span>
+        </div>
+        <div class="exp-org">University of Stuttgart · Germany</div>
+        <ul class="bullet-list">
+          <li>Developed a multi-resolution image compression and transmission system based on the Hierarchical Interpolation (HINT) framework.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FUNDING -->
+    <section id="funding" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">03</span> Research & Funding</h2>
+
+      <div class="funding-card">
+        <h3>BRAIN – Biofeedback-Enhanced Understanding and Trust in AI-generated Software</h3>
+        <div class="funder">CISUC – Centre for Informatics and Systems, University of Coimbra, Portugal</div>
+        <div class="funding-meta">
+          <div class="funding-meta-item">Amount: <span>€20,000</span></div>
+          <div class="funding-meta-item">Award Date: <span>February 2026</span></div>
+          <div class="funding-meta-item">Role: <span>Principal Investigator</span></div>
+        </div>
+        <ul>
+          <li>Investigates neurophysiological biofeedback signals to evaluate and enhance developer trust in AI-generated code.</li>
+          <li>Integrates LLM-generated software analysis with physiological computing and explainable AI methods.</li>
+        </ul>
+      </div>
+
+      <div class="patent-card">
+        <h3>🏛 Patent Pending — Method and System for Scoring a Software Review Process</h3>
+        <div class="ref">PCT/IB2021/059461 · International Patent Published Application</div>
+        <p>An AI-driven biofeedback system that evaluates code review quality through intelligent wearable sensors and machine learning — a novel intersection of software engineering and physiological computing.</p>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">04</span> Education</h2>
+
+      <div class="edu-item">
+        <div class="edu-year">2019–2024</div>
+        <div class="edu-body">
+          <div class="edu-degree">Ph.D. in Informatics Engineering (Intelligent Systems)</div>
+          <div class="edu-inst">University of Coimbra, Portugal</div>
+          <span class="edu-dist">Summa Cum Laude — Highest Distinction</span>
+          <ul class="bullet-list">
+            <li>Thesis: <i>Dynamically Predicting Content Comprehension Through Intelligent Wearables and Biofeedback Sensors (TellBack)</i> — <a href="https://hdl.handle.net/10316/117181" target="_blank">hdl.handle.net/10316/117181</a></li>
+            <li>FCT (Foundation for Science and Technology) grant recipient.</li>
+            <li>Key Project: Biofeedback Augmented Software Engineering (BASE).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-year">2010–2012</div>
+        <div class="edu-body">
+          <div class="edu-degree">M.Sc. in Information Technology (Communication Engineering & Media Technology)</div>
+          <div class="edu-inst">University of Stuttgart, Germany</div>
+          <ul class="bullet-list">
+            <li>DAAD Scholarship holder (German Academic Exchange Service).</li>
+            <li>Thesis grade: 1.3/1 (Excellent) — <a href="https://elib.uni-stuttgart.de/items/dc0511d3-a890-43ec-85e3-f8458533789a" target="_blank">LOCMIC: Low Complexity Multi-resolution Image Compression</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-year">2004–2009</div>
+        <div class="edu-body">
+          <div class="edu-degree">B.Eng. in Computer Systems Engineering</div>
+          <div class="edu-inst">Palestine Polytechnic University</div>
+          <ul class="bullet-list">
+            <li>Ranked <b>1st</b> among Electrical & Computer Department graduates.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">05</span> Teaching Experience</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:18px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">Current — Palestine Ahliya University (MSc in AI & Data Analytics)</p>
+      <div class="course-grid" style="margin-bottom:28px;">
+        <div class="course-card">
+          <div class="level">Graduate · MSc</div>
+          <div class="name">Large Language Models & Agentic Engineering</div>
+          <div class="prog">MSc in AI & Data Analytics</div>
+        </div>
+        <div class="course-card">
+          <div class="level">Graduate · MSc</div>
+          <div class="name">Deep Learning</div>
+          <div class="prog">MSc in AI & Data Analytics</div>
+        </div>
+        <div class="course-card">
+          <div class="level">Undergraduate & Graduate</div>
+          <div class="name">Principles of Artificial Intelligence</div>
+          <div class="prog">BSc/MSc Computer Engineering</div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">Previous Courses</p>
+      <div class="tags">
+        <span class="tag">Android Development</span>
+        <span class="tag">Image Processing</span>
+        <span class="tag">Communication Skills</span>
+        <span class="tag">Data Structures</span>
+        <span class="tag">Database Systems</span>
+        <span class="tag">VB.NET</span>
+        <span class="tag">C++ Programming</span>
+        <span class="tag">Computer Principles</span>
+      </div>
+    </section>
+
+    <!-- SUPERVISION -->
+    <section id="supervision" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">06</span> Research Supervision</h2>
+
+      <p style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:12px;">Active — CISUC, University of Coimbra</p>
+
+      <div class="supervision-item">
+        <span class="status status-active">Active · 2024–Present</span>
+        <div class="student-name">Ricardo Saraiva</div>
+        <div class="student-meta">Ph.D. Candidate · CISUC, University of Coimbra, Portugal</div>
+        <div class="thesis-title">The Cognitive Cost of Vibe Coding: From Silent Misunderstanding to Coding Comprehension — A Multimodal Framework for Real-Time Comprehension Feedback in Vibe Coding IDEs</div>
+        <ul class="bullet-list">
+          <li>Developing a multimodal framework using neurophysiological signals to detect and address real-time comprehension failures in AI-assisted (vibe) coding environments.</li>
+        </ul>
+      </div>
+
+      <p style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin:20px 0 12px;">Active — Palestine Ahliya University</p>
+
+      <div class="supervision-item">
+        <span class="status status-active">Active · 2024–Present</span>
+        <div class="student-name">Carl Deik</div>
+        <div class="student-meta">MSc Student · Palestine Ahliya University</div>
+        <div class="thesis-title">Toward Human-Centered Large Language Models: Retrieval-Augmented Generation for Cognitive and Multilingual Robustness in Code Generation</div>
+        <ul class="bullet-list">
+          <li>Research focuses on RAG-augmented LLM systems with emphasis on cognitive load, multilingual robustness, and human-centered design in code generation.</li>
+        </ul>
+      </div>
+
+      <div class="supervision-item">
+        <span class="status status-active">Active · 2026–Present</span>
+        <div class="student-name">BSc Capstone Project — BioVibe</div>
+        <div class="student-meta">Bio-Signal-Driven Smart Home Control System · Computer Systems Engineering</div>
+        <div class="thesis-title">Bio-Signal-Driven Smart Home Control System (BioVibe)</div>
+        <ul class="bullet-list">
+          <li>Developing a smart home control interface driven by biofeedback and physiological biosignals, integrating embedded systems with real-time AI-based signal processing.</li>
+        </ul>
+      </div>
+
+      <p style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin:20px 0 12px;">Completed — University of Coimbra, DEI</p>
+
+      <div class="supervision-item">
+        <span class="status status-completed">Completed</span>
+        <div class="student-name">Miguel Gomes <span class="grade-badge">19 / 20</span></div>
+        <div class="student-meta">MSc · Departamento de Engenharia Informática, University of Coimbra</div>
+        <div class="thesis-title">iMind: An Intelligent Tool to Augment Content Comprehension</div>
+      </div>
+
+      <div class="supervision-item">
+        <span class="status status-completed">Completed</span>
+        <div class="student-name">José Cruz <span class="grade-badge">18 / 20</span></div>
+        <div class="student-meta">MSc · University of Coimbra</div>
+        <div class="thesis-title">iReview: An Intelligent Code Review Evaluation Tool using Biofeedback</div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">07</span> Technical Expertise</h2>
+
+      <div class="skills-group">
+        <h4>LLM Systems & Agentic AI</h4>
+        <div class="tags">
+          <span class="tag highlight">LangChain</span>
+          <span class="tag highlight">LangGraph</span>
+          <span class="tag highlight">Claude Code</span>
+          <span class="tag highlight">n8n</span>
+          <span class="tag highlight">Unsloth</span>
+          <span class="tag highlight">PEFT / LoRA</span>
+          <span class="tag">Hugging Face Transformers</span>
+          <span class="tag">CrewAI</span>
+          <span class="tag">Ollama / Llama 2</span>
+          <span class="tag">RAG (LlamaIndex)</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">OpenAI API</span>
+          <span class="tag">Anthropic API</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h4>MLOps & Deployment</h4>
+        <div class="tags">
+          <span class="tag highlight">Docker</span>
+          <span class="tag highlight">Kubernetes</span>
+          <span class="tag highlight">MLflow</span>
+          <span class="tag highlight">FastAPI</span>
+          <span class="tag">Flask</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">GitHub / Bitbucket</span>
+          <span class="tag">Google Colab</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h4>AI / ML Frameworks & Data Science</h4>
+        <div class="tags">
+          <span class="tag">TensorFlow</span>
+          <span class="tag">Keras</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Scikit-learn</span>
+          <span class="tag">XGBoost</span>
+          <span class="tag">SHAP / LIME (XAI)</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">SciPy</span>
+          <span class="tag">MATLAB</span>
+          <span class="tag">R</span>
+          <span class="tag">Jupyter</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h4>Programming Languages</h4>
+        <div class="tags">
+          <span class="tag highlight">Python</span>
+          <span class="tag">R</span>
+          <span class="tag">Java</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">08</span> Selected Publications</h2>
+
+      <div class="pub-item">
+        <div class="pub-num">01</div>
+        <div class="pub-body">
+          <div class="pub-title">No Vibe Without Comprehension: Measuring Code Understanding in Modern Coding Workflows Using Neurophysiological Signals</div>
+          <div class="pub-meta">Saraiva, R., Durães, J., de Carvalho, P., Madeira, H., & Hijazi, H. (2025) <span class="pub-venue">ISSRE 2025</span></div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-num">02</div>
+        <div class="pub-body">
+          <div class="pub-title">Where Did I Get Lost? A Prototype Tool for Predicting Local-Level Comprehension Difficulties With Wearables and Explainable Machine Learning</div>
+          <div class="pub-meta">Hijazi, H., Gomes, M., et al. (2024) <span class="pub-venue">IEEE Access</span></div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-num">03</div>
+        <div class="pub-body">
+          <div class="pub-title">Dynamically predicting comprehension difficulties through physiological data and intelligent wearables</div>
+          <div class="pub-meta">Hijazi, H., et al. (2024). Scientific Reports, 14(1), 13678. <span class="pub-venue">Nature Portfolio</span></div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-num">04</div>
+        <div class="pub-body">
+          <div class="pub-title">On the accuracy of code complexity metrics: A neuroscience ground truth</div>
+          <div class="pub-meta">Hao, G., Hijazi, H., et al. (2022). Frontiers in Neuroscience, 16. <span class="pub-venue">Frontiers</span></div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-num">05</div>
+        <div class="pub-body">
+          <div class="pub-title">Quality Evaluation of Modern Code Reviews Through Intelligent Biometric Program Comprehension</div>
+          <div class="pub-meta">Hijazi, H., et al. (2022) <span class="pub-venue">IEEE TSE</span></div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-num">06</div>
+        <div class="pub-body">
+          <div class="pub-title">Wearable Devices and Explainable Unsupervised Learning for COVID-19 Detection and Monitoring</div>
+          <div class="pub-meta">Hasasneh, A., Hijazi, H., et al. (2023). Diagnostics, 13(19), 3071. <span class="pub-venue">MDPI</span></div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-num">07</div>
+        <div class="pub-body">
+          <div class="pub-title">Intelligent Biofeedback Augmented Content Comprehension (TellBack)</div>
+          <div class="pub-meta">Hijazi, H., et al. (2021) <span class="pub-venue">IEEE Access</span></div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-num">08</div>
+        <div class="pub-body">
+          <div class="pub-title">iReview: an Intelligent Code Review Evaluation Tool using Biofeedback</div>
+          <div class="pub-meta">Hijazi, H., et al. (2021) <span class="pub-venue">IEEE ISSRE</span></div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-num">09</div>
+        <div class="pub-body">
+          <div class="pub-title">Wearable devices, smartphones, and interpretable artificial intelligence in combating COVID-19</div>
+          <div class="pub-meta">Hijazi, H., Abu Talib, M., et al. (2021) <span class="pub-venue">Sensors</span></div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:14px;font-style:italic;">Full publication list available on <a href="https://scholar.google.com/citations?user=TttmiGUAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar</a></p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">09</span> Selected Projects</h2>
+
+      <div class="project-card">
+        <h3>BRAIN – Biofeedback-Enhanced Understanding and Trust in AI-generated Software</h3>
+        <div class="meta">PI · CISUC / Palestine Ahliya University · 2026–Present · €20,000</div>
+        <ul class="bullet-list">
+          <li>Investigates neurophysiological signals for evaluating developer trust in AI-generated code.</li>
+        </ul>
+      </div>
+      <div class="project-card">
+        <h3>BASE – Biofeedback Augmented Software Engineering</h3>
+        <div class="meta">Core Contributor · University of Coimbra · 2019–2024</div>
+        <ul class="bullet-list">
+          <li>Developed intelligent biofeedback tools for code review quality prediction, resulting in an international patent application.</li>
+        </ul>
+      </div>
+      <div class="project-card">
+        <h3>U-SOLVE – Urban Sustainable Development Solutions Valuing Entrepreneurship</h3>
+        <div class="meta">Researcher · 6-Country Consortium · 2020–2023</div>
+        <ul class="bullet-list">
+          <li>Led entrepreneurial ecosystem mapping, Social Network Analysis (SNA), and national urban policy development across six countries.</li>
+        </ul>
+      </div>
+      <div class="project-card">
+        <h3>COVID-19 AI Early Detection Project</h3>
+        <div class="meta">Researcher · University of Sharjah, UAE · 2020–2022</div>
+        <ul class="bullet-list">
+          <li>Developed AI models for early COVID-19 detection using non-invasive wearable biofeedback; awarded Second Prize, Ministry of Higher Education, Palestine (2022).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section id="awards" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">10</span> Awards, Scholarships & Honors</h2>
+      <div class="award-item"><div class="award-year">2026</div><div class="award-text">€20,000 Research Grant, CISUC, University of Coimbra, Portugal — BRAIN Project</div></div>
+      <div class="award-item"><div class="award-year">2024</div><div class="award-text">Machine Learning Summer School Certificate, ETH Zurich, Switzerland</div></div>
+      <div class="award-item"><div class="award-year">2022</div><div class="award-text">Second Prize in Scientific Research, Ministry of Higher Education & Scientific Research, Palestine (AI/COVID-19 wearable research)</div></div>
+      <div class="award-item"><div class="award-year">2022</div><div class="award-text">FCT Research Scholarship, Foundation for Science and Technology, Portugal</div></div>
+      <div class="award-item"><div class="award-year">2019–22</div><div class="award-text">Research Fellow, CISUC, University of Coimbra, Portugal</div></div>
+      <div class="award-item"><div class="award-year">2018</div><div class="award-text">Session Chair Award, International Arab Conference on Quality Assurance, Lebanon</div></div>
+      <div class="award-item"><div class="award-year">2010–12</div><div class="award-text">DAAD Scholarship, German Academic Exchange Service</div></div>
+      <div class="award-item"><div class="award-year">2008</div><div class="award-text">Ideal Student Award, Palestine Polytechnic University</div></div>
+    </section>
+
+    <!-- SERVICE -->
+    <section id="service" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">11</span> Academic & Professional Service</h2>
+      <div class="service-item">
+        <h4>DSN Doctoral Forum — Member & Reviewer <span class="sidebar-badge">2023–Present</span></h4>
+        <p>IEEE/IFIP International Conference on Dependable Systems and Networks — annual committee member since 2023.</p>
+      </div>
+      <div class="service-item">
+        <h4>Peer Reviewer — International Venues <span class="sidebar-badge">2023–Present</span></h4>
+        <p>Reviewing for international journals and conferences in AI, intelligent systems, and software engineering.</p>
+      </div>
+      <div class="service-item">
+        <h4>Session Chair <span class="sidebar-badge">2018</span></h4>
+        <p>International Arab Conference on Quality Assurance, Lebanon.</p>
+      </div>
+
+      <p style="font-size:13px;color:var(--muted);margin-top:20px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">Invited Talks & Summer Schools</p>
+      <ul class="bullet-list" style="margin-top:12px;">
+        <li><b>March 2023 — Invited Speaker, ETH Zurich:</b> "Navigating the Challenges of Cognitive Load Monitoring for Content Comprehension Prediction." Collaborative research at the Balgrist Biomedical and Mobile Health Technology Lab.</li>
+        <li><b>June–July 2024 — ETH Zurich:</b> Bumblekite Machine Learning for Health, Care, and Biosciences Summer School (40+ hours).</li>
+        <li><b>2022 — Sapienza University, Rome:</b> Ph.D. Summer School on AI for Urban Air Mobility.</li>
+      </ul>
+    </section>
+
+    <!-- REFERENCES -->
+    <section id="references" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">12</span> References</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="ref-card">
+          <div class="ref-icon">HM</div>
+          <div>
+            <h4>Prof. Dr. Henrique Madeira</h4>
+            <p>Full Professor · University of Coimbra, Portugal</p>
+            <a href="mailto:henrique@dei.uc.pt">henrique@dei.uc.pt</a>
+          </div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-icon">SS</div>
+          <div>
+            <h4>Prof. Dr.-Ing. Sven Simon</h4>
+            <p>Full Professor · University of Stuttgart, Germany</p>
+            <a href="mailto:Sven.Simon@ipvs.uni-stuttgart.de">Sven.Simon@ipvs.uni-stuttgart.de</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>Full publication list available upon request &nbsp;·&nbsp; Last updated March 2026</p>
+      <p style="margin-top:6px;">Haytham W. Hijazi, Ph.D. &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=TttmiGUAAAAJ" target="_blank">Google Scholar</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/haythamhijazi/" target="_blank">LinkedIn</a></p>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  // ── Scroll-spy nav ──────────────────────────────────────
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.sidebar-nav a[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(s => observer.observe(s));
+
+  // ── Fade-in on scroll ───────────────────────────────────
+  const faders = document.querySelectorAll('.fade-in');
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  faders.forEach(f => fadeObserver.observe(f));
+</script>
+
+</body>
+</html>
