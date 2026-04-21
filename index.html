@@ -134,6 +134,13 @@
   .service-item h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
   .service-item p { font-size: 13px; color: var(--muted); }
   .project-card { border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 14px; background: var(--card); border-left: 4px solid var(--blue); }
+  .notion-card { border: 1px solid #fde68a; border-radius: 12px; padding: 22px 26px; margin-bottom: 14px; background: linear-gradient(135deg, #fffbeb 0%, #fefce8 100%); border-left: 4px solid var(--gold); position: relative; overflow: hidden; transition: box-shadow 0.2s, border-color 0.2s; }
+  .notion-card:hover { box-shadow: 0 4px 24px rgba(212,168,67,0.18); border-color: #f59e0b; }
+  .notion-card::before { content: ''; position: absolute; top: 0; right: 0; width: 80px; height: 80px; background: radial-gradient(circle at top right, rgba(212,168,67,0.15), transparent 70%); }
+  .notion-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+  .notion-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .notion-card .notion-icon { display: inline-flex; align-items: center; gap: 6px; background: rgba(212,168,67,0.15); border: 1px solid #fde68a; border-radius: 6px; padding: 3px 10px; font-size: 11.5px; font-weight: 600; color: #92400e; margin-bottom: 12px; text-decoration: none; transition: background 0.15s; }
+  .notion-card .notion-icon:hover { background: rgba(212,168,67,0.28); text-decoration: none; }
   .project-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
   .project-card .meta { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
   .ref-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start; }
@@ -185,6 +192,7 @@
       <a href="#publications">Publications</a>
       <a href="#projects">Projects</a>
       <a href="#developed-tools">Developed Tools</a>
+      <a href="#knowledge-hub">AI Knowledge Hub</a>
       <a href="#awards">Awards</a>
       <a href="#service">Service</a>
       <a href="#references">References</a>
@@ -603,7 +611,29 @@
     <!-- DEVELOPED TOOLS -->
     <section id="developed-tools" class="section fade-in">
       <h2 class="section-title"><span class="section-num">10</span> Developed Tools</h2>
-      <div class="project-card"><h3>Web-Cam based Eye-Tracking for Code Comprehension Evaluation</h3><div class="meta">Lead Developer ? BRAIN Project (CISUC / Palestine Ahliya University) ? 2026?Present</div><ul class="bullet-list"><li>Developed an open research tool that uses standard webcam gaze signals to estimate cognitive load during code reading and to compare AI-generated versus human-written code comprehension.</li><li>Repository: <a href="https://github.com/HaythamHijaziUC/Web-Cam-based-Eye-Tracking-for-Code-Comprehension-Evaluation" target="_blank">github.com/HaythamHijaziUC/Web-Cam-based-Eye-Tracking-for-Code-Comprehension-Evaluation</a></li></ul></div>
+      <div class="project-card"><h3>Web-Cam based Eye-Tracking for Code Comprehension Evaluation</h3><div class="meta">Lead Developer · BRAIN Project (CISUC / Palestine Ahliya University) · 2026–Present</div><ul class="bullet-list"><li>Developed an open research tool that uses standard webcam gaze signals to estimate cognitive load during code reading and to compare AI-generated versus human-written code comprehension.</li><li>Repository: <a href="https://github.com/HaythamHijaziUC/Web-Cam-based-Eye-Tracking-for-Code-Comprehension-Evaluation" target="_blank">github.com/HaythamHijaziUC/Web-Cam-based-Eye-Tracking-for-Code-Comprehension-Evaluation</a></li></ul></div>
+    </section>
+
+    <!-- AI KNOWLEDGE HUB -->
+    <section id="knowledge-hub" class="section fade-in">
+      <h2 class="section-title"><span class="section-num">10b</span> AI Keynotes &amp; Knowledge Hub</h2>
+      <div class="notion-card">
+        <a href="https://www.notion.so/349ddf803ecd805ebc30c1dadc9548ed?v=349ddf803ecd80e3b537000c7e96dc26" target="_blank" class="notion-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
+          Open in Notion ↗
+        </a>
+        <h3>🎤 AI Keynotes, Training Materials &amp; Research Resources</h3>
+        <div class="meta">Dr. Haytham Hijazi · AI &amp; Innovation Center, Palestine Ahliya University · 2025–Present</div>
+        <p style="font-size:13.5px;color:var(--body);line-height:1.85;margin-bottom:11px;">
+          A specialized space that brings together <b>lectures, training materials, and research contributions</b> across Artificial Intelligence, Large Language Models, Agentic AI systems, Software Engineering, Cognitive Load research, Code Comprehension, and AI tools for research, education, and various domain applications.
+        </p>
+        <p style="font-size:13.5px;color:var(--body);line-height:1.85;margin-bottom:11px;">
+          The hub includes <b>presentations, workshops, technical resources, and practical frameworks</b> designed for researchers, developers, educators, and innovation-driven professionals.
+        </p>
+        <p style="font-size:13.5px;color:var(--body);line-height:1.85;margin-bottom:0;">
+          It reflects a multidisciplinary journey exploring how <b>intelligent systems, physiological signals, and modern AI technologies</b> can enhance learning, understanding, and software development practices.
+        </p>
+      </div>
     </section>
 
     <!-- AWARDS -->
